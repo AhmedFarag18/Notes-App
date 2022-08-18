@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notes app by Html, CSS, Javascript" />
+  <title>Notes App</title>
+  <!-- Boxicons icons link -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Bootstrap 5 Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- main styles link -->
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+  <!-- start alerts by js -->
+  <div id="form_alerts" class="form_alerts"></div>
+
+  <!-- start main page -->
+  <div class="main-container">
+    <div class="container">
+      <!-- start title & search bar -->
+      <h1 class="page_title text-center my-4">Notes App</h1>
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-6 col-12">
+          <input type="search" name="search" id="search" placeholder="Search by Title">
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <button class="btn btn-danger deleteAll"><i class='bx bx-trash-alt'></i> Clear All</button>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12 darkmode">
+          <span>Dark Mode</span><i class='bx bx-toggle-right bx-lg'></i>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- start notes -->
+      <div class="notes mt-5">
+        <div class="row cards">
+          <div class="col-lg-3 col-md-6 col-12 mb-3 p-0">
+            <div class="note-icon h-200">
+              <i class='bx bx-plus bx-lg'></i>
+              <p class="fw-semibold">Add New Note</p>
+            </div>
+          </div>
+
+          <!-- columns will added -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- form popup for add new note -->
+  <div class="main-popup">
+    <div class="container my-4">
+      <form method="POST">
+        <!-- form tittle -->
+        <h3 class="mb-3 form-title">Add Note</h3>
+        <div class="row">
+          <!-- Title input -->
+          <div class="form-outline mb-4 col-md-12">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label" for="title">Title</label>
+              </div>
+              <div class="col-12">
+                <input type="text" id="title" class="form-control" name="title" />
+              </div>
+            </div>
+          </div>
+          <!-- description input -->
+          <div class="form-outline mb-4 col-md-12">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label" for="Address">Description</label>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" id="description" rows="4" name="description"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- buttons add and close -->
+          <div class="form-outline mb-4 col-md-12 mt-4">
+            <a href="#" class="btn addNewBtn">Add Note</a>
+            <a href="#" class="btn btn-light canceled">Cancel</a>
+          </div>
+          <!-- close form popup -->
+          <div class="close-btn">
+            <i class='bx bx-x bx-md'></i>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
