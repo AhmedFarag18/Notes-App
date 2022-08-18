@@ -3,20 +3,22 @@
 /* main styles */
 :root {
   --main-color: hsl(0, 0%, 98%);
-  --bg-color: #2c2c54;
-  --title-color: #706fd3;
+  --bg-color: #706fd3;
+  --title-color: #5740da;
   --shadow: #ebe9e9;
   --big_shadow: #dfdfdf;
   --white: #fff;
+  --black: #000;
 }
-/* :root {
-  --main-color: hsl(0, 0%, 15%);
-  --bg-color: #8787e1;
-  --title-color: #706fd3;
-  --shadow: #363636;
-  --big_shadow: #3c3c3c;
-  --white: rgb(0, 0, 0);
-} */
+body.toggle {
+  --main-color: #080808;
+  --bg-color: #706fd3;
+  --title-color: #5740da;
+  --shadow: #000000;
+  --big_shadow: #000000;
+  --white: #111;
+  --black: #aaa;
+}
 
 * {
   margin: 0;
@@ -32,15 +34,30 @@ body {
 }
 
 hr {
-  border-color: var(--title-color);
+  border-color: var(--black);
+}
+
+.search_Cards {
+  display: none;
 }
 
 .h-200 {
-  /* height: 250px; */
   min-height: 250px;
 }
 
-/* =========== start notes ========== */
+.toggleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+/* ======================== 
+==  start notes
+======================== */
+
 .main-container {
   padding: 20px 0 50px 0;
 }
@@ -62,7 +79,7 @@ hr {
   position: relative;
   background-color: var(--white);
   border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+  transition: box-shadow 0.4s;
 }
 
 .cards > div:not(:first-of-type)::before {
@@ -73,7 +90,7 @@ hr {
   right: 0;
   width: 0;
   height: 3px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s;
 }
 
 .cards > div:hover {
@@ -125,17 +142,20 @@ input#search {
   border-radius: 5px;
   width: 100%;
   background-color: var(--white);
+  color: var(--bg-color);
   box-shadow: 0px 0px 5px 0px var(--shadow);
 }
 
-/* settings */
+/* ======================== 
+==  settings
+======================== */
 
 .settings {
   position: absolute;
   right: 46px;
   bottom: -20px;
   background-color: var(--main-color);
-  color: var(--bg-color);
+  color: var(--title-color);
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px var(--shadow);
   opacity: 0;
@@ -144,9 +164,11 @@ input#search {
   transition: 0.5s ease;
   z-index: 20;
 }
+
 .info {
   justify-content: flex-end !important;
 }
+
 .info .row div:nth-child(2) {
   display: flex;
   justify-content: flex-end;
@@ -161,12 +183,17 @@ input#search {
 }
 
 .settings li:hover {
-  background-color: #5e54ac;
-  color: var(--white);
+  background-color: var(--title-color);
+  color: #fff;
 }
 
 .dots-edit {
   cursor: pointer;
+  color: var(--black);
+}
+
+.date {
+  color: var(--black);
 }
 
 .icons:hover .settings {
@@ -179,7 +206,10 @@ input#search {
   justify-content: end !important;
 }
 
-/* form popop */
+/* ======================== 
+== form popop
+======================== */
+
 .main-popup {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px;
@@ -221,7 +251,10 @@ form {
   opacity: 1;
   transform: scale3d(1, 1, 1);
 }
-/* close btn */
+
+/*  ======================== 
+== Close btn 
+======================== */
 .close-btn {
   position: absolute;
   background-color: var(--title-color);
@@ -234,7 +267,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main-color);
+  color: #fff;
   cursor: pointer;
 }
 .canceled {
@@ -264,7 +297,10 @@ form {
   display: block;
   transition: all 0.5s ease;
 }
-/* responsive */
+
+/* ======================== 
+== Responsive 
+======================== */
 
 @media (max-width: 991px) {
   .cards > div {

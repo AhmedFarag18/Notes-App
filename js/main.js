@@ -166,3 +166,33 @@ deleteAllBtn.addEventListener("click", deleteAllData);
 
 
 // start dark && light mode
+let bodyBg = document.querySelector("body");
+let toggleBtn = document.querySelector(".toggleBtn");
+
+toggleBtn.addEventListener("click", () => {
+  if (bodyBg.classList.contains("toggle")) {
+    darkModeFunc();
+  } else {
+    lightModeFunc();
+  }
+});
+
+// check if light checked in localstorage
+if (localStorage.getItem("notes-theme") !== null) {
+  if (localStorage.getItem("notes-theme") === "light") {
+    darkModeFunc();
+  } else {
+    lightModeFunc();
+  }
+}
+
+function darkModeFunc() {
+  localStorage.setItem("notes-theme", "light");
+  bodyBg.classList.remove("toggle");
+  toggleBtn.innerHTML = `<i class='bx bx-moon bx-md'></i> Dark`;
+};
+function lightModeFunc() {
+  localStorage.setItem("notes-theme", "dark");
+  bodyBg.classList.add("toggle");
+  toggleBtn.innerHTML = `<i class='bx bx-sun bx-md'></i> Light`;
+}
