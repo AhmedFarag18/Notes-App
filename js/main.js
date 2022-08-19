@@ -114,9 +114,9 @@ function showNotes() {
             </div>
             <div class="info">
             <hr>
-              <div class="row">
-                <div class="col-6 date">${card.date}</div>
-                <div class="col-6 icons">
+              <div class="row justify-content-between">
+                <div class="col-10 date">${card.date}</div>
+                <div class="col-2 icons">
                   <i class='bx bx-dots-vertical-rounded bx-sm dots-edit'></i>
                   <ul class="settings list-unstyled ">
                     <li onclick="editNote(${idx}, '${card.title}', '${card.desc}')"><i class='bx bx-edit bx-xs'></i> Edit</li>
